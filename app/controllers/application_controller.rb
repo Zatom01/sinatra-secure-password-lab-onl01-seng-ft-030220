@@ -16,7 +16,7 @@ class ApplicationController < Sinatra::Base
     erb :signup
   end
 
-  post "/signup" 
+  post "/signup" do
     if(params[:username].empty? || params[:password].empty?)
       redirect to '/failure'
     else
@@ -63,5 +63,4 @@ class ApplicationController < Sinatra::Base
       User.find(session[:user_id])
     end
   end
-
-end
+end 
